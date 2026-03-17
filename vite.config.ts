@@ -7,6 +7,10 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
     plugins: [react(), tailwindcss()],
+    server: {
+       hmr: process.env.DISABLE_HMR !== 'true',
+       allowedHosts: ['evolution-site-seugestor.wwe9wt.easypanel.host'],
+    },    
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
@@ -22,3 +26,4 @@ export default defineConfig(({mode}) => {
     },
   };
 });
+
