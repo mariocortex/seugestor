@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = 3004;
 
   app.use((req, res, next) => {
     console.log(`${req.method} ${req.url}`);
